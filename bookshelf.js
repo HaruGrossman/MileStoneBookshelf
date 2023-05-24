@@ -13,3 +13,11 @@ function Bookshelf(books = []) {
         return ul;
     };
 };
+
+// const ul = document.querySelector("Bookshelf");
+
+// class Bookshelf {
+//     constructor(book = []) {
+//         this.books = books;
+//     }
+// };

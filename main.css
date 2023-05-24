@@ -1,0 +1,58 @@
+body {
+    background-color: aquamarine;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.body {
+    margin: 10px;
+    background-color: aqua;
+    box-shadow: 20px;
+}
+
+#PageTitle {
+    margin-top: 0px;
+    position: fixed;
+    right: 10px;
+    border: 10px;
+    margin-block: 10px;
+}
+
+.Bookshelf {
+    width: 80vw;
+    margin: 10px;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    box-shadow: 0px;
+}
+
+.Bookshelf .book {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: inherit;
+    height: fit-content;
+    margin-top: -20px;
+    text-decoration-line: inherit;
+}
+
+.Navigation_Bar {
+    display: flex;
+    flex-direction: row;
+    flex-grow: inherit;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(57, 135, 78);
+}
+
+#bodyNavBar.ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
