@@ -1,4 +1,4 @@
-const bookData = [
+const BookData = [
   {
     author: ["Burroughs, Edgar Rice"],
     language: "en",
