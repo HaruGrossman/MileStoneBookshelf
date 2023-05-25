@@ -1,66 +1,18 @@
- body {
-     background-color: aquamarine;
-     margin: 0;
+ button {
+     color: black;
+     font-size: 18px;
+     /* line-height: 20px; */
+     padding: 15px;
+     font-family: Georgia;
+     background-image: linear-gradient(to right, #34E4EA, 0%, #8AB9B5 50%, rgb(20, 78, 117) 100%);
+     border: 2px solid rgb(28, 110, 164);
+     display: inline-block;
  }
 
- html {
-     margin: 0;
+ button:hover {
+     background: #1C6EA4;
  }
 
- /*  
-.head {
-    display: flex;
-    justify-content: space-between;
-}
-
-.body {
-    margin: 10px;
-    background-color: aqua;
-    box-shadow: 20px;
-}
-
-#PageTitle {
-    margin-top: 0px;
-    position: fixed;
-    right: 10px;
-    border: 10px;
-    margin-block: 10px;
-}
-
-.Bookshelf {
-    width: 80vw;
-    margin: 10px;
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-    /* justify-content: space-between; */
- box-shadow: 0px;
+ button:active {
+     background: #144E75;
  }
-
- .Bookshelf .book {
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     flex-grow: inherit;
-     height: fit-content;
-     margin-top: -20px;
-     text-decoration-line: inherit;
- }
-
- .Navigation_Bar {
-     display: flex;
-     flex-direction: row;
-     flex-grow: inherit;
-     text-align: center;
-     justify-content: center;
-     background-color: rgb(57, 135, 78);
- }
-
- #bodyNavBar.ul {
-     display: flex;
-     flex-direction: column;
-     justify-content: flex-start;
-     text-align: center;
- }
-
- */
