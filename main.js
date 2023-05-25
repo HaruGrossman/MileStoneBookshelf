@@ -9,13 +9,17 @@ const topNavBar = document.createElement("nav"); //big box
 const topNavBarSection1 = document.createElement("header");
 const topNavBarSection2 = document.createElement("body");
 //fill in section1
-const leftSection1 = document.createElement("span");//place in Section1
-const rightSection1 = document.createElement("span");// place in Section1
+const leftSection1 = document.createElement("span");
+const rightSection1 = document.createElement("span");
 //fill in right and left section1
-const logIn = document.createElement("button");//leftsection1
-const home = document.createElement("button");//leftsection1
-const hoursAndLocations = document.createElement("button");//rightsection1
-const helpButton = document.createElement("button");//rightsection1
+const logIn = document.createElement("button");
+logIn.textContent = "Log In";
+const home = document.createElement("button");
+home.textContent = "Home";
+const hoursAndLocations = document.createElement("button");
+hoursAndLocations.textContent = "Hours & Locations";
+const helpButton = document.createElement("button");
+helpButton.textContent = "Help";
 //append all the section1 items
 leftSection1.append(logIn, home);
 rightSection1.append(hoursAndLocations, helpButton);
@@ -25,11 +29,17 @@ topNavBarSection1.append(leftSection1, rightSection1);
 const leftSection2 = document.createElement("span");
 const rightSection2 = document.createElement("span");
 //fill in right and left seciton2
-const titleImageIconName = document.createElement("img");//leftsection2
-const search = document.createElement("button");//rightsection2
+const titleImageIconName = document.createElement("img");
+
+titleImageIconName.src = "BusinessIconOption2.png";
+//titleImageIconName.style = BusinessIcon.png;
+const searchbox = document.createElement("input")
+searchbox.placeholder = "Type Here";
+const search = document.createElement("button");
+search.textContent = "🔎";
 //append all the section2 items
 leftSection2.append(titleImageIconName);
-rightSection2.append(search);
+rightSection2.append(searchbox, search);
 topNavBarSection2.append(leftSection2, rightSection2);
 
 
@@ -37,6 +47,66 @@ topNavBarSection2.append(leftSection2, rightSection2);
 
 topNavBar.append(topNavBarSection1, topNavBarSection2);
 content.append(topNavBar)
+//now for a little style
+const topNavBarStyle = {
+    border: "6px ridge #1c6EA4",
+    webkitBoxShadow: "0px 0px 0px 0px rgba(0,0,0,0.63)",
+    boxShadow: "6px 6px 12px 0px rgba(0, 0, 0, 0.63)",
+    background: "white",
+    width: "100%",
+    // marginTop: "2px",
+    position: "fixed",
+    // justifyContent: "space-evenly",
+    // alignItems: "center",
+    // alignContent: "center",
+    // background: 
+}
+const section1Style = {
+    // display: "flex",
+    // flex: "flex-wrap",
+    // width: "100%",
+    // justifyContent: "space-evenly",
+    // alignItems: "center",
+    // alignContent: "center",
+}
+const section2Style = {
+    // display: "flex",
+    // flex: "flex-wrap",
+    // width: "100%",
+    // justifyContent: "right",
+    // alignItems: "center",
+    // alignContent: "center",
+}
+const contentStyle = {
+    border: "0",
+    padding: "0",
+}
+
+////for button styling
+// .myButton {
+// color: rgb(255, 255, 255); font-size: 20px; line-height: 20px; padding: 20px; border-radius: 0px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgba(0, 0, 0, 0.63) 6px 6px 12px 0px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
+// .myButton:hover {
+// background: #1C6EA4; }
+// .myButton:active {
+// background: #144E75; }
+
+////for my word styling
+// font-family: Georgia, serif;
+// font-size: 18px;
+// letter-spacing: 1px;
+// word-spacing: 1px;
+// color: #000000;
+// font-weight: normal;
+// text-decoration: none;
+// font-style: normal;
+// font-variant: normal;
+// text-transform: none;
+
+Object.assign(content.style, contentStyle)
+Object.assign(topNavBar.style, topNavBarStyle)
+Object.assign(topNavBarSection1.style, section1Style)
+Object.assign(topNavBarSection2.style, section2Style)
+
 // create footer//
 //footernavbar 2 sections
 ///leftverticalnavbar with icon links

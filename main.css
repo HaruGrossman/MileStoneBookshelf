@@ -1,7 +1,13 @@
-body {
-    background-color: aquamarine;
-}
+ body {
+     background-color: aquamarine;
+     margin: 0;
+ }
 
+ html {
+     margin: 0;
+ }
+
+ /*  
 .head {
     display: flex;
     justify-content: space-between;
@@ -28,31 +34,33 @@ body {
     text-align: left;
     flex-direction: column;
     /* justify-content: space-between; */
-    box-shadow: 0px;
-}
+ box-shadow: 0px;
+ }
 
-.Bookshelf .book {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: inherit;
-    height: fit-content;
-    margin-top: -20px;
-    text-decoration-line: inherit;
-}
+ .Bookshelf .book {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     flex-grow: inherit;
+     height: fit-content;
+     margin-top: -20px;
+     text-decoration-line: inherit;
+ }
 
-.Navigation_Bar {
-    display: flex;
-    flex-direction: row;
-    flex-grow: inherit;
-    text-align: center;
-    justify-content: center;
-    background-color: rgb(57, 135, 78);
-}
+ .Navigation_Bar {
+     display: flex;
+     flex-direction: row;
+     flex-grow: inherit;
+     text-align: center;
+     justify-content: center;
+     background-color: rgb(57, 135, 78);
+ }
 
-#bodyNavBar.ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: center;
-}
+ #bodyNavBar.ul {
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     text-align: center;
+ }
+
+ */
