@@ -14,24 +14,40 @@ const logIn = document.createElement("button");
 logIn.textContent = "Log In";
 const home = document.createElement("button");
 home.textContent = "Home";
-const hoursAndLocations = document.createElement("button");
-hoursAndLocations.textContent = "Hours & Locations";
+const filter = document.createElement("button")
+fi.onclick = funciton()
+const menuList = ["A-Z", "Z-A", "Author"];
+const choose = document.createElement("select");
+select.name = "sort";
+
+for (const value of menuList) {
+
+};
+
+filter.textContent = "Filter";
+const alphabet = document.createElement("button");
+alphabet.textContent = "A-Z";
+
 const helpButton = document.createElement("button");
 helpButton.textContent = "Help";
+// ///////////////////////////////////////////const 
 //append all the section1 items
+filter.append(alphabet)
 leftSection1.append(logIn, home);
-rightSection1.append(hoursAndLocations, helpButton);
+rightSection1.append(filter, helpButton);
 topNavBarSection1.append(leftSection1, rightSection1);
 
 //fill in topNavBarSeciton2
 const leftSection2 = document.createElement("span");
 const rightSection2 = document.createElement("span");
 //fill in right and left seciton2
-const titleImageIconName = document.createElement("img");
-titleImageIconName.src = "BusinessIconOption2.png";
-//titleImageIconName.src = "BusinessIconVersion3.svg";
-//titleImageIconName.src = "BusinessIconOption2.png";
-//titleImageIconName.style = BusinessIcon.png;
+const titleImageIconName = document.createElement("span");
+titleImageIconName.src = "Twitter-Logo.png.crdownload";
+// titleImageIconName.textContent = "Haru Books";
+// titleImageIconName.src = "BookBusinessIcon.png";
+// titleImageIconName.src = "BusinessIconVersion3.svg";
+// titleImageIconName.src = "CompanyBook.svg";
+
 const searchbox = document.createElement("input");
 searchbox.placeholder = "Type Here";
 const search = document.createElement("button");
@@ -44,7 +60,7 @@ topNavBarSection2.append(leftSection2, rightSection2);
 
 //"about" tab/button that will lead to second page
 topNavBar.append(topNavBarSection1, topNavBarSection2);
-content.append(topNavBar)
+
 
 //now for a little style
 const topNavBarStyle = {
@@ -85,10 +101,10 @@ const contentStyle = {
 const buttonStyle = {
     backgroundColor: "#C8C2AE",
 }
-const titleImageIconNameStyle = {
-    height: "40px",
-    width: "40px",
-}
+// const titleImageIconNameStyle = {
+//     height: "40px",
+//     width: "40px",
+// }
 
 
 ////for my word styling
@@ -106,7 +122,7 @@ const titleImageIconNameStyle = {
 // Object.assign(bookshelf.style, bookshelfStyle);
 // Object.assign(button.style, buttonStyle)
 Object.assign(content.style, contentStyle);
-Object.assign(titleImageIconName.style, titleImageIconNameStyle)
+// Object.assign(titleImageIconName.style, titleImageIconNameStyle)
 Object.assign(topNavBar.style, topNavBarStyle);
 Object.assign(topNavBarSection1.style, section1Style);
 Object.assign(topNavBarSection2.style, section2Style);
@@ -121,7 +137,33 @@ Object.assign(topNavBarSection2.style, section2Style);
 //// about the library
 //// language
 //
-const footerNavBAr = document.createElement("footer");
+const footerNavBar = document.createElement("nav");
+const verticalLeftFooter = document.createElement("nav");
+const horisontalFooterNavbar = document.createElement("nav");
+
+//style my footer
+const verticalFooterStyle = {
+    border: "6px ridge #1c6EA4",
+    //     webkitBoxShadow: "0px 0px 0px 0px rgba(0,0,0,0.63)",
+    //     boxShadow: "6px 6px 12px 0px rgba(0, 0, 0, 0.63)",
+    //     background: "#34E4EA",
+    //     width: "100%",
+    //     position: "fixed",
+    //     bottom: "10px",
+}
+Object.assign(verticalLeftFooter.style, verticalFooterStyle);
+
+
+const twitterLink = document.getElementsByClassName("#TwitterBird");
+// twitterLink.src = "Twitter-Logo.png.crdownload";
+// const instagramLink = document.createElement("span");
+// instagramLink.src = "instagramIcon.jpeg";
+// const youtubeLink = document.createElement("span");
+
+
+verticalLeftFooter.append(twitterLink)//formatted for more additions later
+footerNavBar.append(verticalLeftFooter, horisontalFooterNavbar);
+content.append(topNavBar, footerNavBar);
 
 
 
@@ -171,7 +213,7 @@ for (const bookData of BookData) {
 }
 
 content.append(bookshelf.render());
-console.log(content);
+// console.log(content);
 
 
 //Load in book data
