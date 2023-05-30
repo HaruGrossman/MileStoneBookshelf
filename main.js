@@ -5,24 +5,24 @@ const bookshelf = new Bookshelf();
 ////No real information is required. Dummy data or lorum ipsum is fine!
 const topNavBar = document.createElement("nav"); //big box
 const topNavBarSection1 = document.createElement("header");//smallerbox
+//topNavBarSection1.textContent = "Sort:";
 const topNavBarSection2 = document.createElement("body");//smallerbox
 //fill in topNaveBarSection1
 const leftSection1 = document.createElement("span");
 const rightSection1 = document.createElement("span");
 //fill in right and left section1
-const logIn = document.createElement("button");
-logIn.textContent = "Log In";
-const home = document.createElement("button");
-home.textContent = "Home";
+const sortAZ = document.createElement("button");
+sortAZ.textContent = "A-Z";
+const sortZA = document.createElement("button");
+sortZA.textContent = "Z-A";
 const filter = document.createElement("button")
-fi.onclick = funciton()
+// fi.onclick = funciton()
 const menuList = ["A-Z", "Z-A", "Author"];
 const choose = document.createElement("select");
-select.name = "sort";
+// select.name = "sort";
 
-for (const value of menuList) {
-
-};
+// for (const value of menuList) {
+// };
 
 filter.textContent = "Filter";
 const alphabet = document.createElement("button");
@@ -30,10 +30,11 @@ alphabet.textContent = "A-Z";
 
 const helpButton = document.createElement("button");
 helpButton.textContent = "Help";
-// ///////////////////////////////////////////const 
+
 //append all the section1 items
-filter.append(alphabet)
-leftSection1.append(logIn, home);
+
+// filter.append(alphabet)
+leftSection1.append(sortAZ, sortZA);
 rightSection1.append(filter, helpButton);
 topNavBarSection1.append(leftSection1, rightSection1);
 
@@ -41,9 +42,9 @@ topNavBarSection1.append(leftSection1, rightSection1);
 const leftSection2 = document.createElement("span");
 const rightSection2 = document.createElement("span");
 //fill in right and left seciton2
-const titleImageIconName = document.createElement("span");
-titleImageIconName.src = "Twitter-Logo.png.crdownload";
-// titleImageIconName.textContent = "Haru Books";
+const titleImageIconName = document.createElement("h1");
+//titleImageIconName.src = "Twitter-Logo.png.crdownload";
+titleImageIconName.textContent = "Haru Books";
 // titleImageIconName.src = "BookBusinessIcon.png";
 // titleImageIconName.src = "BusinessIconVersion3.svg";
 // titleImageIconName.src = "CompanyBook.svg";
@@ -98,9 +99,9 @@ const contentStyle = {
     backgroundColor: "#0EB1D2",
     justifyContent: "100%"
 }
-const buttonStyle = {
-    backgroundColor: "#C8C2AE",
-}
+// const buttonStyle = {
+//     backgroundColor: "#C8C2AE",
+// }
 // const titleImageIconNameStyle = {
 //     height: "40px",
 //     width: "40px",
@@ -126,7 +127,7 @@ Object.assign(content.style, contentStyle);
 Object.assign(topNavBar.style, topNavBarStyle);
 Object.assign(topNavBarSection1.style, section1Style);
 Object.assign(topNavBarSection2.style, section2Style);
-
+content.append(topNavBar);
 // create footer//  color: #34E4EA
 //footernavbar 2 sections
 ///leftverticalnavbar with icon links
@@ -138,8 +139,8 @@ Object.assign(topNavBarSection2.style, section2Style);
 //// language
 //
 const footerNavBar = document.createElement("nav");
-const verticalLeftFooter = document.createElement("nav");
-const horisontalFooterNavbar = document.createElement("nav");
+const verticalLeftFooter = document.createElement("div");
+const horisontalFooterNavbar = document.createElement("div");
 
 //style my footer
 const verticalFooterStyle = {
@@ -153,18 +154,13 @@ const verticalFooterStyle = {
 }
 Object.assign(verticalLeftFooter.style, verticalFooterStyle);
 
-
-const twitterLink = document.getElementsByClassName("#TwitterBird");
+// const twitterLink = document.getElementsByClassName("#TwitterBird");
 // twitterLink.src = "Twitter-Logo.png.crdownload";
 // const instagramLink = document.createElement("span");
 // instagramLink.src = "instagramIcon.jpeg";
 // const youtubeLink = document.createElement("span");
 
-
-verticalLeftFooter.append(twitterLink)//formatted for more additions later
-footerNavBar.append(verticalLeftFooter, horisontalFooterNavbar);
-content.append(topNavBar, footerNavBar);
-
+// verticalLeftFooter.append(twitterLink)//formatted for more additions later
 
 
 // add Books//
@@ -174,7 +170,6 @@ content.append(topNavBar, footerNavBar);
 // The Bookshelf instance renders Books accurately.
 
 //Comments//
-
 //Users can leave comments no longer than 280 characters on any Book they want. 
 // Users can press a "Comment" button which reveals a `text` input element.
 // Users can then type their comment and click "send" to add it to the Book.
@@ -182,6 +177,61 @@ content.append(topNavBar, footerNavBar);
 // The Book and Bookshelf instances are updated accordingly.
 // The comments persist even if a search or sort rerenders the Books.
 // Data can be stored locally or in state memory. A database is not required. 
+const commentContainer = document.createElement("container");
+const openField = document.createElement("input");
+openField.placeholder = ("Tell us what you think");
+// const saveField = openField.getAttribute("placeholder");
+const subButton = document.createElement("button");
+subButton.textContent = ("Leave Comment");
+const clearCommentButton = document.createElement("button");
+clearCommentButton.textContent = ("Clear");
+const sendComment = document.createElement("button");
+sendComment.textContent = ("Submit");
+// const submittedComments = document.createElement("ul");
+//store subbed comments
+let submittedCommentsList = [];
+
+const showSubmittedComments = () => {
+    let submittedComments = "<ul>";
+    submittedCommentsList.forEach(submition => {
+        list += `<li> ${submition} </li>`;
+    })
+    list += "</ul>";
+    submition.innerHTML = list;
+}
+
+//need a funciton to clear my text block after sendComment has be pushed
+// function clearCommentButton() => {
+//     openField.remove(value)
+// }
+
+
+// sendComment pushes the text from my textarea to my open array for submittedCommmentsList
+sendComment.addEventListener('click', function () {
+    event.preventDefault();
+    submittedCommentsList.push(openField.value);
+    commentContainer.append(submittedCommentsList);
+    openField.value = ("More Thoughts");
+})
+
+//subbutton opens up my commentbox after click
+subButton.addEventListener('click', function () {
+    commentContainer.append(openField, sendComment);
+    subButton.remove();
+    // if (openField.length > 0) {
+    //     submittedCommentsList.push(openField[0]);
+    //     // showSubmittedComments();
+    //     // openField.value = "";
+    // }
+    // console.log(submittedCommentsList);
+    // return submittedCommentsList;
+})
+
+//commentContainer.append(submittedComments);
+commentContainer.appendChild(subButton);
+footerNavBar.append(commentContainer);
+
+// console.log(commentContainer);
 
 // alternate Assessment requirements//
 
@@ -211,13 +261,12 @@ for (const bookData of BookData) {
     );
     bookshelf.addBook(book);
 }
-
 content.append(bookshelf.render());
+
 // console.log(content);
 
-
 //Load in book data
-//your render will be appended to html in here
+// your render will be appended to html in here
 // const searchBtn = document.querySelector("#SearchText1");
 // const arrAZTitle = document.getElementById("arrangeA-Z_Title");
 // const arrAZAuthor = document.getElementById("arrangeA-Z_Author");
@@ -225,24 +274,36 @@ content.append(bookshelf.render());
 // const subject = document.getElementById("Subject");
 // const searchButton = document.getElementById("#Search");
 
-// arrAZTitle.addEventListener('click', () => {
-//     function renderAZT(array) {
-//         const arrAZT = arr.map(Bookshelf);
-//         console.log(arrAZT);
-//         // ul.appendChild(renderAZT);
-//     };
-//     renderAZT(Bookshelf);
-//     ul.replaceChildren(...arrAZT);
+sortAZ.addEventListener('click', () => {
+    bookshelf.sort(function (a, b) {
+        if (a.title < b.title) {
+            return -1;
+        }
+        if (a.title > b.title) {
+            return 1;
+        }
+        return 0;
+    });
+    console.log(bookshelf)
+    content.replaceChildren(...sortAZ);
+})
+// function renderAZT(array) {
+//     const arrAZT = bookshelf.map(b[0] - a[0]);
+//     console.log(arrAZT);
+// };
+// renderAZT(bookshelf);
+// content.replaceChildren(...sortAZ);
 // });
-// arrAZAuthor.addEventListener('click', () => {
-//     function renderAZAuthor(array) {
-//         const arrAZAuthor = arr.map(Bookshelf);
-//         console.log(arrAZAuthor);
-//         // ul.appendChild(renderAZAuthor)
-//     };
-//     renderAZAuthor(Bookshelf);
-//     ul.replaceChildren(...arrAZAuthor);
-// });
+
+sortZA.addEventListener('click', () => {
+    function renderZAT(array) {
+        const arrZAT = array.map(bookshelf);
+        console.log(arrZAT);
+        // ul.appendChild(renderAZAuthor)
+    };
+    renderZAT(bookshelf);
+    ul.replaceChildren(...arrAZT);
+});
 
 // fav.addEventListener('click', () => {
 //     function renderSortFavorite(array) {
@@ -254,7 +315,6 @@ content.append(bookshelf.render());
 //     ul.replaceChildren(...arrFavorite);
 // });
 
-
 // subject.addEventListener('click', () => {
 //     function renderSortSubject(array) {
 //         const arrSubject = arr.sort(Bookshelf);
@@ -264,3 +324,5 @@ content.append(bookshelf.render());
 //     renderSortSubject(Bookshelf);
 //     ul.replaceChildren(...arrSubject);
 // });
+footerNavBar.append(verticalLeftFooter, horisontalFooterNavbar);
+content.append(footerNavBar);

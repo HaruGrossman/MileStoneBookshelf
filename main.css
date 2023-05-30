@@ -1,8 +1,9 @@
  button {
      color: black;
      font-size: 18px;
+     block-size: fit-content;
      /* line-height: 20px; */
-     padding: 15px;
+     padding: 3px;
      font-family: Georgia;
      background-image: linear-gradient(to right, #34E4EA, 0%, #8AB9B5 50%, rgb(20, 78, 117) 100%);
      border: 2px solid rgb(28, 110, 164);
