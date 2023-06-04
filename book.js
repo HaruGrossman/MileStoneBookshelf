@@ -1,53 +1,60 @@
-function Book(author, language, subject, title) {
-    this.author = author;
-    this.language = language;
-    this.subject = subject;
-    this.title = title;
+class Book {
+    constructor(book) {
+        this.author = book.author;
+        this.language = book.language;
+        this.subject = book.subject;
+        this.title = book.title;
+        this.note = "";
+    }
+    render() {
+        const bookDiv = document.createElement("div");
+        const bookTitle = document.createElement("p");
+        bookTitle.textContent = this.title;
+        //create comment Button
+        const leaveCommentButton = document.createElement("button");
+        leaveCommentButton.textContent = ("Leave Comment");
 
-    this.render = function () {
-        const li = document.createElement("li");
-        li.textContent = this.title;
-        return li;
+        const commentContainer = document.createElement("div");
+        const commentbox = document.createElement("input");
+        commentbox.textContent = ("Thoughts");
+        const submittedCommentButton = document.createElement("button");
+        submittedCommentButton.textContent = ("Save Thoughts");
+        commentContainer.append(commentbox, leaveCommentButton);
+        // submittedCommentButton.addEventListener("click", function () {})
+        bookDiv.append(bookTitle, commentContainer);
+
+        // function bookCommentSubmit() {
+        //     Book.addComment({
+        //         note: commentbox.value,
+        //     })
+        // }
+        // submittedCommentButton.addEventListener('click', bookCommentSubmit);
+
+
+        // style my bookDiv
+        const bookDivStyle = {
+            border: "6px solid #1c6EA4",
+            boxShadow: "6px 6px 12px 0px rgba(0, 0, 0, 0.63)",
+            background: "#0EB1D2",
+            width: "100%",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+        }
+        Object.assign(bookDiv.style, bookDivStyle);
+
+        return bookDiv;
     };
 }
-
-// class Book {
-//     constructor(data) {
-//         this.author = data.author;
-//         this.language = data.language;
-//         this.subject = data.subject;
-//         this.title = data.title;
-//     }
-//     render() {
-//         //box the book goes inside of//
-//         const section = document.createElement("section");
-//         section.classList.add("book");
-//         //title of book//
-//         const title = document.createElement("h1");
-//         title.textContent = this.title;
-//         //aurthor of book//
-//         const author = document.createElement("h2");
-//         author.textContent = this.author;
-//         //subject of book//
-//         const subject = document.createElement("h3");
-//         subject.textContent = this.subject;
-//         //language of book//
-//         const language = document.createElement("h4");
-//         language.textContent = this.language;
-
-//         const section2 = document.createElement("div");
-//         // insert favorite button
-
-//         section.append(title);
-//         section2.append(author);
-//         section2.append(subject);
-//         section2.append(language);
-//         section.append(section2);
-//         const bookshelf = document.getElementsByClassName('Bookshelf')[0]
-//         bookshelf.append(section)
-//     }
+// newBookBox.append(authorInput, languageInput, subjectInput, titleInput, submitButton);
+// function handleSubmit() {
+//     bookshelf.addBook({
+//         author: authorInput.value,
+//         language: languageInput.value,
+//         subject: subjectInput.value,
+//         title: titleInput.value,
+//     })
 // }
-// bookData.map((eachBook) => {
-//     const book = new Book(eachBook)
-//     book.render()
-// });
+// submitButton.addEventListener('click', handleSubmit);
+
+// return newBookBox;
