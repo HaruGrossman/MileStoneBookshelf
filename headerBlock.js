@@ -11,17 +11,17 @@ function renderHeaderBlock() {
     aboutInformation.textContent = ("About");
     aboutInformation.className = ("aboutButton");
 
+    const aboutBody = document.createElement("p");
+    aboutBody.textContent = ("Gollum, originally named Sméagol (or Trahald), was at first a Stoor, one of the three early Hobbit-types. The name Gollum was derived from the sound of his gurgling, choking cough. His life extended far beyond his nature, by the effects of possessing the One Ring. Sméagol was about 589 years old when he died, a remarkable age for a creature that was once a Hobbit, but he had been deformed and twisted in body and mind by the corruption of the Ring. His chief desire was to repossess the Ring that had enslaved him, and he pursued it for many years after Bilbo Baggins found it in Gollum's cave within the Misty Mountains. Inadvertently, Gollum would play a vital role in the ultimate Quest of the Ring.");
+
     aboutInformation.addEventListener('click', function () {
-        content.remove(newBookBody, bookshelfDiv);
-
-        const aboutBody = document.createElement("p");
-        aboutBody.textContent = ("Gollum, originally named Sméagol (or Trahald), was at first a Stoor, one of the three early Hobbit-types. The name Gollum was derived from the sound of his gurgling, choking cough. His life extended far beyond his nature, by the effects of possessing the One Ring. Sméagol was about 589 years old when he died, a remarkable age for a creature that was once a Hobbit, but he had been deformed and twisted in body and mind by the corruption of the Ring. His chief desire was to repossess the Ring that had enslaved him, and he pursued it for many years after Bilbo Baggins found it in Gollum's cave within the Misty Mountains. Inadvertently, Gollum would play a vital role in the ultimate Quest of the Ring.");
-
-        content.append(aboutBody);
+        const content = document.getElementById('content');
+        // console.log(content);
+        content.removeChild(newBookBody);
+        content.removeChild(bookshelfDiv);
+        content.appendChild(aboutBody);
     });
 
-    // const addBook = document.createElement("button");
-    // addBook.textContent = "Add Book";
     const filter = document.createElement("button")
     filter.textContent = "Filter";
     const alphabet = document.createElement("button");
@@ -29,6 +29,13 @@ function renderHeaderBlock() {
 
     const homeButton = document.createElement("button");
     homeButton.textContent = "Home";
+
+    homeButton.addEventListener('click', function () {
+        const content = document.getElementById('content');
+        content.removeChild(aboutBody);
+        content.append(newBookBody, bookshelfDiv);
+    })
+
 
     //append all the section1 items
     // filter.append(alphabet)
@@ -128,4 +135,4 @@ function renderHeaderBlock() {
     // footerNavBar.append(verticalLeftFooter, horisontalFooterNavbar);
     // content.append(footerNavBar);
     return topNavBar
-}
+};

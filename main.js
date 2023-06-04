@@ -4,7 +4,7 @@ bookshelf.render();
 const newBookBody = createNewBookInput();
 content.append(topNavBar, newBookBody, bookshelfDiv);
 
-// const aboutbutton = document.getElementsByClassName(".aboutButton");
+const aboutbutton = document.getElementsByClassName(".aboutButton");
 
 // aboutbutton.addEventListener('click', function () {
 //     content.remove(newBookBody, bookshelfDiv);
